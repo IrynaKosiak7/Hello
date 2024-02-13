@@ -1,85 +1,60 @@
 package org.example.example_06_02.homework;
 
 public class Algorithmid {
-//    private int number;
-//    private String method;
-//    private String cycle;
-//    public Factorial;
-//    private FibonacciSequence;
-//
-//    public Algorithmid(int number, String method, String cycle, Factorial, FibonacciSequence) {
-//        this.number = number;
-//        this.method = method;
-//        this.cycle = cycle;
-//        Object FibonacciSequence;
-//        Object Factorial;
-//    }
-//    public void setMethod(String method) {
-//        if (method == "factorial") {
-//            method = Factorial();
-//        } else if (method == "fibonacci") {
-//            method = FibonacciSequence;
-//        } else {
-//            System.out.println("Error!");
-//        }
-//
-//    }
-//    public String getMethod() {
-//        return method;
-//    }
-//    public Serializable setCycle(String cycle) {
-//        if (method == "factorial") {
-//            if (cycle == "for") {
-//                cycle = Factorial.factorialFor();
-//            } else if (cycle == "do-while") {
-//                cycle = Factorial.factorialDoWhile();
-//            } else if (cycle == "while") {
-//                cycle = Factorial.factorialWhile();
-//            } else {
-//                System.out.println("Error!");
-//            }
-//        } else if (method == "fibonacci") {
-//            if (cycle == "for") {
-//                cycle = FibonacciSequence.calculateFibanacciFor();
-//            } else if (cycle == "do-while") {
-//                cycle = FibonacciSequence.calculateFibanacciDoWhile();
-//            } else if (cycle == "while") {
-//                cycle = FibonacciSequence.calculateFibanacciWhile();
-//            } else {
-//                System.out.println("Error!");
-//            }
-//        } else {
-//            System.out.println("Error!");
-//        }
-//        public String getCycle () {
-//            return cycle;
-//        }
-//
-//        public void setNumber(int number){
-//            if (number >= 0) {
-//                this.number = number;
-//            } else {
-//                System.out.println("Error!");
-//            }
-//        }
-//        public int getNumber() {
-//            return number;
-//        }
-//
-//        public void getFactorial() {
-//            return Factorial;
-//        }
-//
-//        public void setFactorial(void factorial) {
-//            Factorial = factorial;
-//        }
-//
-//        public void getFibonacciSequence() {
-//            return FibonacciSequence;
-//        }
-//
-//        public void setFibonacciSequence(void fibonacciSequence) {
-//            FibonacciSequence = fibonacciSequence;
-//        }
- //   }
+    private int number;
+    private int methodNumber;
+    private int cycleNumber;
+
+    public Algorithmid(int number, int methodNumber, int cycleNumber) {
+        if (number >= 0) {
+            this.number = number;
+        } else {
+            System.out.println("Error!");
+        }
+        if (methodNumber < 0 || methodNumber > 2) {
+            System.out.println("Error!");
+        }else {
+            this.methodNumber = methodNumber;
+        }
+        if (cycleNumber < 0 || cycleNumber > 3) {
+            System.out.println("Error!");
+        }else {
+            this.cycleNumber = cycleNumber;
+        }
+    }
+    public int[] getResult() {
+        if (methodNumber == 1) {
+            return getFactorial();
+        } else if (methodNumber == 2) {
+            return getFibonacciSequence();
+        } else {
+            return new int[]{-1};
+        }
+    }
+    public  int[] getFactorial() {
+        int[] result = new int[1];
+        Factorial factorial = new Factorial(number);
+        if (cycleNumber == 1) {
+            result[0] = factorial.calculateFactorialFor();
+        } else if (cycleNumber == 2) {
+            result[0] = factorial.calculateFactorialDoWhile();
+        }else if (cycleNumber == 3) {
+            result[0] = factorial.calculateFactorialWhile();
+        } else {
+            result[0] = -1;
+        }
+        return result;
+    }
+    public int[] getFibonacciSequence() {
+        FibonacciSequence fibonacci = new FibonacciSequence(number);
+        if (cycleNumber == 1) {
+            return fibonacci.fibonacciSequenceFor();
+        } else if (cycleNumber == 2) {
+            return fibonacci.fibonacciSequenceWhile();
+        }else if (cycleNumber == 3) {
+            return fibonacci.fibonacciSequenceDoWhile();
+        }
+        return new int[]{-1};
+    }
+
 }
