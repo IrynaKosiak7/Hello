@@ -22,6 +22,7 @@ public class Algorithmid {
             this.cycleNumber = cycleNumber;
         }
     }
+
     public int[] getResult() {
         if (methodNumber == 1) {
             return getFactorial();

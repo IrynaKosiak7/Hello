@@ -11,7 +11,7 @@ public class Main {
         fibon.setNumber(5);
         System.out.println(Arrays.toString(fibon.fibonacciSequenceWhile()));
         System.out.println();
-        fibon.setNumber(-5);
+        fibon.setNumber(9);
         System.out.println(Arrays.toString(fibon.fibonacciSequenceDoWhile()));
 
         Factorial factor = new Factorial();

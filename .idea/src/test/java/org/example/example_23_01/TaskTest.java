@@ -19,7 +19,7 @@ class TaskTest {
 
     @Test
     void getMaxEven() {
-        int[] array = { 1, 9, 2, 8, 3, 7, 4, 5};
+        int[] array = {1, 9, 2, 8, 3, 7, 4, 5};
         int expected = 4;
         //when
         int actual = Task.getMaxEven(array);
@@ -49,7 +49,7 @@ class TaskTest {
 
     @Test
     void getLessArithmetic() {
-        int[] array = { 1, 9, 14, 26, 2, 8, 3, 7, 4, 5};
+        int[] array = {1, 9, 14, 26, 2, 8, 3, 7, 4, 5};
         int[] expected = {1,2,3,4};
         //when
         int[] actual = Task.getLessArithmetic(array);

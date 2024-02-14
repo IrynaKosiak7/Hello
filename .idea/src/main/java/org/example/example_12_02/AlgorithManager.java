@@ -10,8 +10,6 @@ public class AlgorithManager {
             this.algorithmId = algorithmId;
             this.string = string;
         }
-
-
     }
     public  int[] getResult(){
         if (algorithmId == 1) {
